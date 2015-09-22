@@ -13,8 +13,6 @@ myApp.controller('mainController', ['$scope', function($scope){
 
 }]);
 
-
-
 myApp.controller('statsController', ['$scope', '$http', '$log', function($scope, $http, $log){
 	$scope.users = '';
 	
@@ -28,6 +26,20 @@ myApp.controller('statsController', ['$scope', '$http', '$log', function($scope,
 			$log.warn(err);
 		});
 
+
+}]);
+
+myApp.controller('createUser', ['$scope', '$http', '$log', function($scope, $http, $log){
+	$scope.name = '',
+		$scope.age = 0,
+		$scope.profession = '',
+		$scope.hobbies = '',
+		$scope.glyph = 'glyphicon-asterisk',
+
+	$scope.addUser = function(event){
+		event.preventDefault();
+		$log.info($scope.name, $scope.age, $scope.profession, $scope.hobbies, $scope.glyph);
+	};
 
 }]);
 

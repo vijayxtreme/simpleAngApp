@@ -13,6 +13,7 @@ nav {
 	padding-left: 10px;
 	padding-right: 10px;
 	font-size:1em;
+	z-index: 1;
 }
 section.container {
 	clear:both;

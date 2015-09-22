@@ -29,7 +29,7 @@
 	<hr />
 	<div class="col-md-12" ng-controller="statsController">
 		<div ng-repeat="user in users">
-			<h3> <span class="glyphicon {{ user.glyph }}" aria-hidden="true"></span> Stats for : {{ user.name | capitalize }} </h3>
+			<h3> <span class="glyphicon {{ user.glyph }}" aria-hidden="true"></span> Stats for: {{ user.name | capitalize }} </h3>
 			<ul>
 				<li>Name: {{ user.name | capitalize }}</li>
 				<li>Age: {{ user.age }}</li>
@@ -37,6 +37,28 @@
 				<li>Hobbies: {{ user.hobbies }}</li>
 			</ul>
 		</div>
+	</div>
+	<div class="col-md-12" ng-controller="createUser">
+		<form class="form-group">
+			<h3>Add A User</h3>
+			<hr />
+			<label>Name</label>
+			<input type="text" class="form-control" placeholder="Enter a name" ng-model='name'/>
+			<br />
+			<label>Age</label>
+			<input type="tel" class="form-control" placeholder="Enter your age" ng-model='age'/>
+			<br />
+			<label>Profession</label>
+			<input type="text" class="form-control" placeholder="Enter a name" ng-model='profession'/>
+			<br />
+			<label>Hobbies</label>
+			<input type="text" class="form-control" placeholder="Enter a name" ng-model='hobbies'/>
+			<br />
+			<label>Glyph</label>
+			<input type="text" class="form-control" placeholder="Enter a name" ng-model='glyph'/>
+			<br />
+			<button class="btn btn-success" ng-click="addUser($event)">Go</button>
+		</form>
 	</div>
 </div>
 </section>

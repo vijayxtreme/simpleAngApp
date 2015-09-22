@@ -13,11 +13,12 @@ myApp.controller('mainController', ['$scope', function($scope){
 
 }]);
 
-myApp.controller('statsController', ['$scope', '$http', '$log', function($scope, $http, $log){
+myApp.controller('usersController', ['$scope', '$http', '$log', function($scope, $http, $log){
 	$scope.users = '';
-	
 
-	$http.get('http://localhost:3000/')
+	$scope.getUsers = function(){
+		$scope.users = '';
+		$http.get('http://localhost:3000/')
 		.success(function(data){
 			$log.info(data);
 			$scope.users = data;
@@ -25,11 +26,11 @@ myApp.controller('statsController', ['$scope', '$http', '$log', function($scope,
 		.error(function(err){
 			$log.warn(err);
 		});
+	}
 
+	$scope.getUsers();
 
-}]);
-
-myApp.controller('createUser', ['$scope', '$http', '$log', function($scope, $http, $log){
+	
 	$scope.name = '',
 		$scope.age = 0,
 		$scope.profession = '',
@@ -46,11 +47,26 @@ myApp.controller('createUser', ['$scope', '$http', '$log', function($scope, $htt
 			hobbies:$scope.hobbies,
 			glyph:$scope.glyph
 		}).success(function(data){
-			$log.success('Saved to db!');
+			$scope.getUsers();
 		}).error(function(err){
 			$log.warn(err);
 		});
+
 	};
+
+	$scope.delUser = function(user){
+		if(confirm("Delete: " + user + "?")){
+			$http.post('http://localhost:3000/del', {
+				name: user
+			}).success(function(){
+				$scope.getUsers();
+			}).error(function(err){
+				$log.warn(err);
+			})
+		}
+	}
+
+
 
 }]);
 

@@ -27,7 +27,7 @@
 		</form>
 	</div>
 	<hr />
-	<div class="col-md-12" ng-controller="statsController">
+	<div class="col-md-12" ng-controller="usersController">
 		<div ng-repeat="user in users">
 			<h3> <span class="glyphicon {{ user.glyph }}" aria-hidden="true"></span> Stats for: {{ user.name | capitalize }} </h3>
 			<ul>
@@ -35,10 +35,10 @@
 				<li>Age: {{ user.age }}</li>
 				<li>Profession: {{ user.profession }}</li>
 				<li>Hobbies: {{ user.hobbies }}</li>
+				<li> <button class="btn btn-danger" ng-click="delUser(user.name)">Delete User</button></li>
 			</ul>
 		</div>
-	</div>
-	<div class="col-md-12" ng-controller="createUser">
+		<div class="col-md-12">
 		<form class="form-group">
 			<h3>Add A User</h3>
 			<hr />
@@ -55,10 +55,20 @@
 			<input type="text" class="form-control" placeholder="Enter a name" ng-model='hobbies'/>
 			<br />
 			<label>Glyph</label>
-			<input type="text" class="form-control" placeholder="Enter a name" ng-model='glyph'/>
+			<select ng-model="glyph" class="form-control">
+				<option selected>glyphicon-heart</option>
+				<option><span class="glyphicon glyphicon-piggy-bank"></span> glyphicon-piggy-bank</option>
+				<option><span class="glyphicon glyphicon-piggy-bank"></span>glyphicon-music</option>
+				<option><span class="glyphicon glyphicon-piggy-bank"></span>glyphicon-glass</option>
+				<option><span class="glyphicon glyphicon-piggy-bank"></span>glyphicon-plus</option>
+				<option><span class="glyphicon glyphicon-piggy-bank"></span>glyphicon-star</option>
+				<option><span class="glyphicon glyphicon-piggy-bank"></span>glyphicon-road</option>
+			</select>
+			
 			<br />
 			<button class="btn btn-success" ng-click="addUser($event)">Go</button>
 		</form>
+		</div>
 	</div>
 </div>
 </section>

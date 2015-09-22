@@ -26,6 +26,18 @@
 			<button class="btn btn-warning" ng-click="submit($event)">Submit</button>
 		</form>
 	</div>
+	<hr />
+	<div class="col-md-12" ng-controller="statsController">
+		<div ng-repeat="user in users">
+			<h3> <span class="glyphicon {{ user.glyph }}" aria-hidden="true"></span> Stats for : {{ user.username | capitalize }} </h3>
+			<ul>
+				<li>Name: {{ user.username | capitalize }}</li>
+				<li>Age: {{ user.age }}</li>
+				<li>Profession: {{ user.profession }}</li>
+				<li>Hobbies: {{ user.hobbies }}</li>
+			</ul>
+		</div>
+	</div>
 </div>
 </section>
 </body>

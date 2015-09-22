@@ -1,2 +1,4 @@
 bower_components
 myscript.sh
+node_modules
+.gitignore

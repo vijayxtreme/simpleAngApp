@@ -29,9 +29,9 @@
 	<hr />
 	<div class="col-md-12" ng-controller="statsController">
 		<div ng-repeat="user in users">
-			<h3> <span class="glyphicon {{ user.glyph }}" aria-hidden="true"></span> Stats for : {{ user.username | capitalize }} </h3>
+			<h3> <span class="glyphicon {{ user.glyph }}" aria-hidden="true"></span> Stats for : {{ user.name | capitalize }} </h3>
 			<ul>
-				<li>Name: {{ user.username | capitalize }}</li>
+				<li>Name: {{ user.name | capitalize }}</li>
 				<li>Age: {{ user.age }}</li>
 				<li>Profession: {{ user.profession }}</li>
 				<li>Hobbies: {{ user.hobbies }}</li>

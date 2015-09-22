@@ -1,0 +1,23 @@
+code {
+	background-color: #F9F9F9;
+	padding:2.5px 10px;
+	border-radius: 4px;
+	display: block;
+}
+
+nav {
+	background-color: #000;
+	color:#f9f9f9;
+	position: fixed;
+	width: 100%;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size:1em;
+}
+section.container {
+	clear:both;
+	padding-top:110px;
+}
+.alert {
+	margin-top:10px;
+}

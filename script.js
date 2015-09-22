@@ -39,6 +39,17 @@ myApp.controller('createUser', ['$scope', '$http', '$log', function($scope, $htt
 	$scope.addUser = function(event){
 		event.preventDefault();
 		$log.info($scope.name, $scope.age, $scope.profession, $scope.hobbies, $scope.glyph);
+		$http.post('http://localhost:3000/save', {
+			name:$scope.name,
+			age:$scope.age,
+			profession:$scope.profession,
+			hobbies:$scope.hobbies,
+			glyph:$scope.glyph
+		}).success(function(data){
+			$log.success('Saved to db!');
+		}).error(function(err){
+			$log.warn(err);
+		});
 	};
 
 }]);

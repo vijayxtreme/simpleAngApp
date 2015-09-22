@@ -1,3 +1,8 @@
 ##Angular JS Notes
 
-**MY favorite**
+####Notes coming soon
+
+_*Emphasis on*_ 
+
+* Directives
+* Services

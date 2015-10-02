@@ -9,7 +9,7 @@ myApp.controller('mainController', ['$scope', function($scope){
 		event.preventDefault();
 		alert("Not submitted")
 	};
-
+  
 
 }]);
 
@@ -31,7 +31,7 @@ myApp.controller('usersController', ['$scope', '$http', '$log', function($scope,
 	$scope.getUsers();
 
 	
-	$scope.name = '',
+	$scope.name = 'default',
 		$scope.age = 0,
 		$scope.profession = '',
 		$scope.hobbies = '',

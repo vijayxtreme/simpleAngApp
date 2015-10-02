@@ -7,6 +7,7 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+	<script type="text/javascript" src="https://code.angularjs.org/1.5.0-beta.0/angular-messages.min.js"></script>
 	<script src="script.js"></script>
 </head>
 <body>
@@ -69,6 +70,20 @@
 			<button class="btn btn-success" ng-click="addUser($event)">Go</button>
 		</form>
 		</div>
+	</div>
+	<div ng-controller="messages">
+	<form name="myForm">
+ *   <label>
+ * :    Enter text
+ *     <input type="text" ng-model="field" name="myField" required minlength="5" />
+ *   </label>
+ *   <div ng-messages="myForm.myField.$error" role="alert">
+ *     <div ng-message="required">You did not enter a field</div>
+ *     <div ng-message="minlength, maxlength">
+ *       Your email must be between 5 and 100 characters long
+ *     </div>
+ *   </div>
+ * </form>
 	</div>
 </div>
 </section>

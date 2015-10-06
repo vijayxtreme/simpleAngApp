@@ -23,57 +23,9 @@
 <section class="container">
 <div class="row">
 	<div class="col-md-12" ng-controller="mainController">
-		<form class="form-group">
-			<input class="form-control" ng-model="myInput" placeholder="Enter something, genius"/>
-			<p class="alert" ng-class="{'alert-danger' : myInput.length === 0, 'alert-warning': myInput.length > 0 && myInput.length <= 5, 'alert-success' : myInput.length >5}">{{ "Hello " + myInput }}</p>
-			<button class="btn btn-warning" ng-click="submit($event)">Submit</button>
-		</form>
+	
 	</div>
-	<hr />
-	<div class="col-md-12" ng-controller="usersController">
-		<div ng-repeat="user in users">
-			<h3> <span class="glyphicon {{ user.glyph }}" aria-hidden="true"></span> Stats for: {{ user.name | capitalize }} </h3>
-			<ul>
-				<li>Name: {{ user.name | capitalize }}</li>
-				<li>Age: {{ user.age }}</li>
-				<li>Profession: {{ user.profession }}</li>
-				<li>Hobbies: {{ user.hobbies }}</li>
-				<li> <button class="btn btn-danger" ng-click="delUser(user.name)">Delete User</button></li>
-			</ul>
-		</div>
-		<div class="col-md-12">
-		<form class="form-group">
-			<h3>Add A User</h3>
-			<hr />
-			<label>Name</label>
-			<input type="text" class="form-control" placeholder="Enter a name" ng-model='name'/>
-			<br />
-			<label>Age</label>
-			<input type="tel" class="form-control" placeholder="Enter your age" ng-model='age'/>
-			<br />
-			<label>Profession</label>
-			<input type="text" class="form-control" placeholder="Enter a name" ng-model='profession'/>
-			<br />
-			<label>Hobbies</label>
-			<input type="text" class="form-control" placeholder="Enter a name" ng-model='hobbies'/>
-			<br />
-			<label>Glyph</label>
-			<select ng-model="glyph" class="form-control">
-				<option selected>glyphicon-heart</option>
-				<option><span class="glyphicon glyphicon-piggy-bank"></span> glyphicon-piggy-bank</option>
-				<option><span class="glyphicon glyphicon-piggy-bank"></span>glyphicon-music</option>
-				<option><span class="glyphicon glyphicon-piggy-bank"></span>glyphicon-glass</option>
-				<option><span class="glyphicon glyphicon-piggy-bank"></span>glyphicon-plus</option>
-				<option><span class="glyphicon glyphicon-piggy-bank"></span>glyphicon-star</option>
-				<option><span class="glyphicon glyphicon-piggy-bank"></span>glyphicon-road</option>
-			</select>
-			
-			<br />
-			<button class="btn btn-success" ng-click="addUser($event)">Go</button>
-		</form>
-		</div>
-	</div>
-
+	
 </div>
 </section>
 </body>
